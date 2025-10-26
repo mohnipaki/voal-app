@@ -1,0 +1,17 @@
+{
+  "name": "voal-capacitor-starter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "android": "npx cap open android",
+    "sync": "npx cap sync",
+    "add:android": "npx cap add android",
+    "build": "echo 'Static project; files in /www'"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  }
+}

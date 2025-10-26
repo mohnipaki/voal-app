@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Voal Jamilah</title>
+    
+    <!-- PWA Manifest and Theme Color -->
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkFkbWluIFZvYWwgSmFtaWxhaCIsCiAgInNob3J0X25hbWUiOiAiQWRtaW4gVm9hbCIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZjBmMmY1IiwKICAidGhlbWVfY29sb3IiOiAiI2ZmZmZmZiIsCiAgImRlc2NyaXB0aW9uIjogIkFwbGlrYXNpIHVudHVrIG1hbmFqZW1lbiBzdG9rIGthaW4gdm9hbC4iLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJodHRwczovL2kuaWJiLmNvL3lCNmNiOWcvR2VtaW5pLUdlbmVyYXRlZC1JbWFnZS1nMzB5Z3hnMzB5Z3hnMzB5LnBuZyIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJodHRwczovL2kuaWJiLmNvL3lCNmNiOWcvR2VtaW5pLUdlbmVyYXRlZC1JbWFnZS1nMzB5Z3hnMzB5Z3hnMzB5LnBuZyIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfQogIF0KfQo=">
+
+    <!-- iOS PWA Meta Tags -->
+    <link rel="apple-touch-icon" href="https://i.ibb.co/yB6cb9bw/Gemini-Generated-Image-g30ygxg30ygxg30y.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Admin Voal">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Script html5-qrcode dihapus -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
+        .tab-btn, .choice-btn {
+            transition: all 0.2s ease-in-out;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        .modal { transition: opacity 0.3s ease; }
+        .modal > div { transition: transform 0.3s ease, opacity 0.3s ease; }
+        /* Style #reader video dihapus */
+        .choice-btn.selected {
+            background-color: #2563eb;
+            color: white;
+            border-color: #1d4ed8;
+            font-weight: 600;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes draw-check { 0% { stroke-dashoffset: 30; } 100% { stroke-dashoffset: 0; } }
+        @keyframes bounce-in { 0% { transform: scale(0.7); opacity: 0; } 80% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
+        @keyframes pulse-indicator { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+        #initial-loading-overlay > div, #processing-loading-modal > div { animation: bounce-in 0.4s ease-out forwards; }
+        #loading-spinner { animation: spin 1s linear infinite; }
+        #alert-modal.show > div { animation: bounce-in 0.4s ease-out forwards; }
+        #alert-modal.show #check-path {
+            stroke-dasharray: 30;
+            stroke-dashoffset: 30;
+            animation: draw-check 0.5s ease-out 0.3s forwards;
+        }
+        #status-indicator.syncing {
+            animation: pulse-indicator 1.5s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4">
+        <header class="text-center mb-6">
+            <h1 class="text-2xl sm:text-4xl font-bold text-gray-900">MANAGEMENT POTONGAN VOAL</h1>
+            <img src="https://kaspin.sgp1.digitaloceanspaces.com/gambarToko/B43kpM1hZFqld82u1iNG.png" alt="Logo" class="h-14 sm:h-16 mx-auto my-3">
+            <p class="text-xs sm:text-base text-gray-600 mt-2">
+                code by Rifai <a href="https://www.instagram.com/mohnipaki" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">@mohnipaki</a>
+            </p>
+        </header>
+
+        <main class="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-4 sm:p-8">
+            <div class="bg-gray-200 rounded-xl p-1 flex space-x-1 mb-6">
+                <button id="btn-stok" class="tab-btn flex-1 p-2 text-xs sm:text-base font-semibold rounded-lg flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a1 1 0 011-1h14a1 1 0 110 2H3a1 1 0 01-1-1z"></path></svg>
+                    <span>Stok</span>
+                </button>
+                <button id="btn-tambah" class="tab-btn flex-1 p-2 text-xs sm:text-base font-semibold rounded-lg flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                    <span>Tambah</span>
+                </button>
+                <button id="btn-database" class="tab-btn flex-1 p-2 text-xs sm:text-base font-semibold rounded-lg flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"></path><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"></path><path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"></path></svg>
+                    <span>Database</span>
+                </button>
+            </div>
+
+            <div class="bg-slate-100 p-2 sm:p-6 rounded-lg border border-gray-200">
+                <div id="content-stok">
+                    <div class="my-4 flex flex-col sm:flex-row gap-2 items-center">
+                        <div class="relative w-full">
+                            <input type="text" id="searchInput" placeholder="Cari barcode, warna, dll..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /></svg>
+                        </div>
+                        <!-- Tombol Scan Barcode Btn dihapus -->
+                    </div>
+                    <div id="stok-cards" class="sm:hidden space-y-3 h-[50vh] overflow-y-auto p-1"></div>
+                    <div class="overflow-auto h-[50vh] rounded-lg border bg-white hidden sm:block">
+                        <table id="stok-table" class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-100 sticky top-0 z-10">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Barcode</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Warna Kain</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Yard</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Letak</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelStokKain" class="bg-white divide-y divide-gray-200"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="content-tambah" class="hidden">
+                    <form id="form-tambah-stok" class="space-y-4 max-w-lg mx-auto">
+                        <div>
+                            <label for="barcode" class="block text-sm font-medium text-gray-700">Barcode</label>
+                             <div class="flex gap-2 mt-1">
+                                <input type="text" id="barcode" required oninvalid="this.setCustomValidity('Kolom ini wajib diisi.')" oninput="this.setCustomValidity('')" class="flex-grow mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                <!-- Tombol scanBarcodeFormBtn dihapus -->
+                            </div>
+                        </div>
+                        <div id="barcode-duplicate-warning" class="max-w-lg mx-auto"></div>
+                        <div>
+                            <label for="warnaKain" class="block text-sm font-medium text-gray-700">Warna Kain</label>
+                            <input type="text" id="warnaKain" required oninvalid="this.setCustomValidity('Kolom ini wajib diisi.')" oninput="this.setCustomValidity('')" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                         <div>
+                            <label class="block text-sm font-medium text-gray-700">Supplier</label>
+                            <div class="flex gap-2 mt-1" id="supplier-btns">
+                                <button type="button" data-value="SL" class="choice-btn w-full p-2 border-2 border-gray-300 rounded-md bg-white hover:bg-gray-200">SL</button>
+                                <button type="button" data-value="SB" class="choice-btn w-full p-2 border-2 border-gray-300 rounded-md bg-white hover:bg-gray-200">SB</button>
+                            </div>
+                            <input type="hidden" id="supplier" name="supplier" required>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="kode" class="block text-sm font-medium text-gray-700">Kode</label>
+                                <input type="text" id="kode" inputmode="numeric" required oninvalid="this.setCustomValidity('Kolom ini wajib diisi.')" oninput="this.setCustomValidity('')" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                             <div>
+                                <label for="yard" class="block text-sm font-medium text-gray-700">Yard</label>
+                                <input type="text" inputmode="numeric" id="yard" required oninvalid="this.setCustomValidity('Kolom ini wajib diisi.')" oninput="this.setCustomValidity('')" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Letak</label>
+                             <div class="flex gap-2 mt-1" id="letak-btns">
+                                <button type="button" data-value="KODIR" class="choice-btn w-full p-2 border-2 border-gray-300 rounded-md bg-white hover:bg-gray-200">KODIR</button>
+                                <button type="button" data-value="RAK" class="choice-btn w-full p-2 border-2 border-gray-300 rounded-md bg-white hover:bg-gray-200">RAK</button>
+                            </div>
+                            <input type="hidden" id="letak" name="letak" required>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                            Simpan Stok Baru
+                        </button>
+                    </form>
+                </div>
+
+                <div id="content-database" class="hidden">
+                     <div class="bg-white p-6 rounded-lg border border-gray-200 max-w-lg mx-auto">
+                         <form id="form-tambah-database" class="space-y-4">
+                             <div>
+                                 <label for="dbWarnaKain" class="block text-sm font-medium text-gray-700">Warna Kain Baru</label>
+                                 <input type="text" id="dbWarnaKain" required oninvalid="this.setCustomValidity('Kolom ini wajib diisi.')" oninput="this.setCustomValidity('')" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                             </div>
+                             <div class="grid grid-cols-2 gap-4">
+                                 <div>
+                                    <label for="dbKode" class="block text-sm font-medium text-gray-700">Kode</label>
+                                    <input type="text" id="dbKode" required oninvalid="this.setCustomValidity('Kolom ini wajib diisi.')" oninput="this.setCustomValidity('')" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                 </div>
+                                 <div>
+                                    <label class="block text-sm font-medium text-gray-700">Supplier</label>
+                                    <div class="flex gap-2 mt-1" id="db-supplier-btns">
+                                        <button type="button" data-value="SL" class="choice-btn w-full p-2 border-2 border-gray-300 rounded-md bg-white hover:bg-gray-200">SL</button>
+                                        <button type="button" data-value="SB" class="choice-btn w-full p-2 border-2 border-gray-300 rounded-md bg-white hover:bg-gray-200">SB</button>
+                                    </div>
+                                    <input type="hidden" id="db-supplier" name="db-supplier" required>
+                                 </div>
+                             </div>
+                             <button type="submit" class="w-full bg-purple-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-300">
+                                 Tambah
+                             </button>
+                         </form>
+                     </div>
+                     <div id="db-duplicate-warning" class="max-w-lg mx-auto mt-4"></div>
+                     <div class="text-center mt-6">
+                         <button id="view-db-btn" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
+                             Lihat DataBase Kain
+                         </button>
+                     </div>
+                </div>
+            </div>
+            
+            <footer class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500 flex justify-between items-center">
+                <div id="status-container" class="flex items-center gap-2">
+                    <div id="status-indicator" class="w-3 h-3 bg-gray-400 rounded-full transition-colors duration-500"></div>
+                    <span id="status-text">Menghubungkan...</span>
+                </div>
+                <span id="last-sync-time"></span>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scanner Modal Dihapus -->
+
+
+    <!-- Modal Proses Kain -->
+    <div id="proses-modal" class="modal fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 hidden opacity-0">
+        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg transform scale-95">
+            <h2 class="text-2xl font-bold mb-4">Proses & Alokasi Kain</h2>
+            <div class="mb-4 p-3 bg-gray-100 rounded-md text-sm grid grid-cols-2 gap-x-4 gap-y-2">
+                <p><strong>Barcode:</strong> <span id="modal-barcode"></span></p>
+                <p><strong>Warna:</strong> <span id="modal-warna"></span></p>
+                <p><strong>Yard:</strong> <span id="modal-yard"></span></p>
+                <p><strong>Kode:</strong> <span id="modal-kode"></span></p>
+                <p><strong>Supplier:</strong> <span id="modal-suplier"></span></p>
+            </div>
+            
+            <form id="form-proses-kain">
+                <input type="hidden" id="modal-hidden-barcode">
+                <div>
+                    <p class="font-medium text-gray-700 mb-3">Pilih Pelanggan & Isi Jumlah Potongan:</p>
+                    <div id="customer-selection" class="space-y-3">
+                        <!-- Customer inputs will be generated here by JS -->
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end space-x-3">
+                    <button type="button" id="modal-close" class="bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 transition duration-300">Batal</button>
+                    <button type="submit" class="bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300">Proses</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Custom Confirmation Modal -->
+    <div id="confirm-modal" class="modal fixed inset-0 bg-black bg-opacity-60 z-[80] flex items-center justify-center p-4 hidden opacity-0">
+         <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md transform scale-95">
+             <h3 class="text-lg font-bold mb-4" id="confirm-title">Konfirmasi Tindakan</h3>
+             <div id="confirm-message" class="mb-6 text-gray-600 text-sm space-y-2"></div>
+             <div class="flex justify-end space-x-3">
+                 <button id="confirm-cancel" class="bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-300">Batal</button>
+                 <button id="confirm-ok" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700">Ya, Lanjutkan</button>
+             </div>
+         </div>
+    </div>
+
+    <!-- Modal Edit Database Kain -->
+    <div id="edit-db-modal" class="modal fixed inset-0 bg-black bg-opacity-60 z-[70] flex items-center justify-center p-4 hidden opacity-0">
+        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg transform scale-95">
+            <h2 class="text-2xl font-bold mb-4">Edit Data Database Kain</h2>
+            <form id="form-edit-db">
+                <input type="hidden" id="edit-db-original-warna">
+                <div class="space-y-4">
+                    <div>
+                        <label for="edit-db-warna" class="block text-sm font-medium text-gray-700">Warna Kain</label>
+                        <input type="text" id="edit-db-warna" required oninvalid="this.setCustomValidity('Kolom ini wajib diisi.')" oninput="this.setCustomValidity('')" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="edit-db-kode" class="block text-sm font-medium text-gray-700">Kode</label>
+                        <input type="text" id="edit-db-kode" required oninvalid="this.setCustomValidity('Kolom ini wajib diisi.')" oninput="this.setCustomValidity('')" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="edit-db-suplier" class="block text-sm font-medium text-gray-700">Supplier</label>
+                        <input type="text" id="edit-db-suplier" required oninvalid="this.setCustomValidity('Kolom ini wajib diisi.')" oninput="this.setCustomValidity('')" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end space-x-3">
+                    <button type="button" id="edit-db-modal-close" class="bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 transition duration-300">Batal</button>
+                    <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Simpan Perubahan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal View Database -->
+    <div id="view-db-modal" class="modal fixed inset-0 bg-black bg-opacity-60 z-[60] flex items-center justify-center p-4 hidden opacity-0">
+        <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-6xl transform scale-95 flex flex-col h-[90vh]">
+            <div class="flex justify-between items-center mb-4 pb-4 border-b">
+                <h2 class="text-2xl font-bold text-gray-800">Lihat Database Kain</h2>
+                <button type="button" id="view-db-modal-close" class="text-gray-500 hover:text-gray-800 text-3xl font-bold">&times;</button>
+            </div>
+            <div class="relative w-full mb-4">
+                 <input type="text" id="view-db-search-input" placeholder="Cari berdasarkan warna, kode, atau supplier..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                 <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+            </div>
+            <div id="view-db-grid-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 overflow-y-auto flex-grow p-2 bg-gray-50 rounded-lg">
+                <!-- Grid items will be injected here -->
+            </div>
+            <div id="view-db-pagination" class="flex justify-between items-center mt-4 pt-4 border-t">
+                <!-- Pagination controls will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Alert Modal (Success/Error) -->
+    <div id="alert-modal" class="modal fixed inset-0 bg-black bg-opacity-70 z-[90] flex items-center justify-center p-4 hidden opacity-0">
+        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-sm text-center transform scale-95 opacity-0" style="background-image: radial-gradient(circle at top, #ffffff, #f0f5ff);">
+            <div id="alert-icon-container" class="mx-auto mb-5 h-20 w-20 flex items-center justify-center rounded-full bg-white shadow-md">
+                <!-- SVG Icon will be injected here -->
+            </div>
+            <p id="alert-message" class="text-lg font-semibold text-gray-800"></p>
+        </div>
+    </div>
+
+    <!-- Input Again Modal -->
+    <div id="input-again-modal" class="modal fixed inset-0 bg-black bg-opacity-70 z-[90] flex items-center justify-center p-4 hidden opacity-0">
+         <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-sm text-center transform scale-95">
+             <h3 class="text-lg font-bold mb-2">Sukses!</h3>
+             <p class="mb-6 text-gray-600">Data berhasil disimpan. Ingin menambah data lagi dengan Supplier, Yard, dan Letak yang sama?</p>
+             <div class="flex justify-center space-x-3">
+                 <button id="input-again-no" class="bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 w-full">Selesai</button>
+                 <button id="input-again-yes" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 w-full">Ya, Tambah Lagi</button>
+             </div>
+         </div>
+    </div>
+
+    <!-- Initial Loading Overlay -->
+    <div id="initial-loading-overlay" class="fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center">
+        <div class="text-center text-white transform scale-100 opacity-100">
+            <svg id="loading-spinner" class="w-16 h-16 mx-auto" viewBox="0 0 50 50">
+                <circle class="stroke-current text-white/30" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+                <circle class="stroke-current text-blue-500" cx="25" cy="25" r="20" fill="none" stroke-width="4" stroke-linecap="round" stroke-dasharray="31.4 94.2" transform="rotate(90 25 25)"></circle>
+            </svg>
+            <p class="mt-4 text-lg font-semibold tracking-wider">Mengambil data awal...</p>
+        </div>
+    </div>
+
+    <!-- Processing Loading Modal -->
+    <div id="processing-loading-modal" class="modal fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center hidden opacity-0">
+        <div class="text-center text-white transform scale-100 opacity-100">
+            <svg class="w-16 h-16 mx-auto animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <p class="mt-4 text-lg font-semibold tracking-wider">Memproses data...</p>
+        </div>
+    </div>
+
+
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwbrtQWS65xZl1Ssc0VEb06ao_qop0kO9r7tEaoiBmzP5kDL1Yuhk86Uwirt2c4jR17/exec';
+        const PELANGGAN_LIST = ['SERI', 'KLIWON', 'AUREL', 'ALFAIN', 'PESANAN RUMAH', 'PURI'];
+        
+        // --- SMART CACHE KEYS ---
+        const CACHE_KEY_STOK = 'stokKainCache_v1';
+        const CACHE_KEY_DB = 'databaseKainCache_v1';
+
+        const buttons = { stok: document.getElementById('btn-stok'), tambah: document.getElementById('btn-tambah'), database: document.getElementById('btn-database'), };
+        const contents = { stok: document.getElementById('content-stok'), tambah: document.getElementById('content-tambah'), database: document.getElementById('content-database'), };
+        const forms = { tambahStok: document.getElementById('form-tambah-stok'), tambahDatabase: document.getElementById('form-tambah-database'), prosesKain: document.getElementById('form-proses-kain') };
+        const modal = { element: document.getElementById('proses-modal'), closeBtn: document.getElementById('modal-close'), barcode: document.getElementById('modal-barcode'), warna: document.getElementById('modal-warna'), yard: document.getElementById('modal-yard'), hiddenBarcode: document.getElementById('modal-hidden-barcode'), customerSelection: document.getElementById('customer-selection') };
+        
+        const confirmModal = { element: document.getElementById('confirm-modal'), title: document.getElementById('confirm-title'), message: document.getElementById('confirm-message'), okBtn: document.getElementById('confirm-ok'), cancelBtn: document.getElementById('confirm-cancel'), };
+        const alertModal = { element: document.getElementById('alert-modal'), iconContainer: document.getElementById('alert-icon-container'), message: document.getElementById('alert-message') };
+        const inputAgainModal = { element: document.getElementById('input-again-modal'), yesBtn: document.getElementById('input-again-yes'), noBtn: document.getElementById('input-again-no') };
+        const processingLoadingModal = { element: document.getElementById('processing-loading-modal') };
+        const editDbModal = {
+            element: document.getElementById('edit-db-modal'),
+            closeBtn: document.getElementById('edit-db-modal-close'),
+            form: document.getElementById('form-edit-db'),
+            originalWarna: document.getElementById('edit-db-original-warna'),
+            warna: document.getElementById('edit-db-warna'),
+            kode: document.getElementById('edit-db-kode'),
+            suplier: document.getElementById('edit-db-suplier')
+        };
+        const viewDbModal = {
+            element: document.getElementById('view-db-modal'),
+            closeBtn: document.getElementById('view-db-modal-close'),
+            searchInput: document.getElementById('view-db-search-input'),
+            gridContainer: document.getElementById('view-db-grid-container'),
+            pagination: document.getElementById('view-db-pagination')
+        };
+        const dbDuplicateWarning = document.getElementById('db-duplicate-warning');
+        const barcodeDuplicateWarning = document.getElementById('barcode-duplicate-warning');
+
+        const initialLoadingOverlay = document.getElementById('initial-loading-overlay');
+        const stokTable = document.getElementById('stok-table');
+        const stokCards = document.getElementById('stok-cards');
+        
+        let stokKainCache = [];
+        let databaseKainCache = []; 
+        let isSyncing = false;
+        let isDbSyncing = false;
+
+        let dbCurrentPage = 1;
+        const dbItemsPerPage = 10;
+
+        const searchInput = document.getElementById('searchInput');
+
+        // --- GENERAL UI FUNCTIONS ---
+        function showTab(tabKey) {
+            Object.values(contents).forEach(c => c.classList.add('hidden'));
+            contents[tabKey].classList.remove('hidden');
+
+            Object.values(buttons).forEach(b => {
+                b.classList.remove('bg-white', 'text-blue-600', 'shadow-md');
+                b.classList.add('text-gray-600', 'hover:bg-white', 'hover:bg-opacity-60');
+            });
+            buttons[tabKey].classList.add('bg-white', 'text-blue-600', 'shadow-md');
+            buttons[tabKey].classList.remove('text-gray-600', 'hover:bg-white', 'hover:bg-opacity-60');
+        }
+
+        // --- MODAL & ALERT FUNCTIONS (REVISED) ---
+        function openModal(modalElement) {
+            document.body.classList.add('modal-open');
+            modalElement.classList.remove('hidden');
+            setTimeout(() => {
+                modalElement.classList.remove('opacity-0');
+                modalElement.classList.add('show');
+                const focusable = modalElement.querySelector('div');
+                if (focusable) focusable.classList.remove('scale-95', 'opacity-0');
+            }, 10);
+        }
+        
+        function closeModal(modalElement) {
+            document.body.classList.remove('modal-open');
+            modalElement.classList.add('opacity-0');
+            modalElement.classList.remove('show');
+            const focusable = modalElement.querySelector('div');
+            if (focusable) focusable.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => modalElement.classList.add('hidden'), 300);
+        }
+
+        function showAlert(message, isError = false) {
+             return new Promise(resolve => {
+                const iconSuccess = `<svg class="w-20 h-20 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path id="check-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>`;
+                const iconError = `<svg class="w-20 h-20 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+                
+                alertModal.iconContainer.innerHTML = isError ? iconError : iconSuccess;
+                alertModal.message.textContent = message;
+                openModal(alertModal.element);
+
+                setTimeout(() => {
+                    closeModal(alertModal.element);
+                    setTimeout(resolve, 300);
+                }, isError ? 2500 : 1800);
+            });
+        }
+
+        function showConfirmation(title, messageHTML) {
+            return new Promise((resolve) => {
+                confirmModal.title.textContent = title;
+                confirmModal.message.innerHTML = messageHTML;
+                
+                const okHandler = () => {
+                    closeModal(confirmModal.element);
+                    resolve(true);
+                    confirmModal.okBtn.removeEventListener('click', okHandler);
+                    confirmModal.cancelBtn.removeEventListener('click', cancelHandler);
+                };
+                const cancelHandler = () => {
+                    closeModal(confirmModal.element);
+                    resolve(false);
+                    confirmModal.okBtn.removeEventListener('click', okHandler);
+                    confirmModal.cancelBtn.removeEventListener('click', cancelHandler);
+                };
+
+                confirmModal.okBtn.addEventListener('click', okHandler);
+                confirmModal.cancelBtn.addEventListener('click', cancelHandler);
+                
+                openModal(confirmModal.element);
+            });
+        }
+        
+        // --- SYNC & DATA FUNCTIONS (REVISED) ---
+        function updateStatus(status) {
+            const indicator = document.getElementById('status-indicator');
+            const statusText = document.getElementById('status-text');
+            const syncTime = document.getElementById('last-sync-time');
+
+            indicator.classList.remove('bg-green-500', 'bg-yellow-500', 'bg-red-500', 'syncing');
+            
+            switch (status) {
+                case 'syncing':
+                    indicator.classList.add('bg-yellow-500', 'syncing');
+                    statusText.textContent = 'Sinkronisasi...';
+                    break;
+                case 'error':
+                    indicator.classList.add('bg-red-500');
+                    statusText.textContent = 'Koneksi Gagal';
+                    break;
+                case 'connected':
+                default:
+                    indicator.classList.add('bg-green-500');
+                    statusText.textContent = 'Terhubung';
+                    const now = new Date();
+                    syncTime.textContent = `Update terakhir: ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+                    break;
+            }
+        }
+        
+        async function callGoogleScript(action, data) {
+            if (SCRIPT_URL === '' || !SCRIPT_URL.startsWith('https://')) {
+                updateStatus('error');
+                await showAlert('Error: URL Google Apps Script belum dikonfigurasi!', true);
+                return { success: false, message: 'URL not configured' };
+            }
+            try {
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST', mode: 'cors', cache: 'no-cache', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({ action, ...data }), redirect: 'follow'
+                });
+                if (!response.ok) throw new Error(`Network response error: ${response.statusText}`);
+                
+                const responseText = await response.text();
+                if (!responseText) {
+                    throw new Error("Menerima respons kosong dari server. Pastikan skrip telah di-deploy dengan benar.");
+                }
+                return JSON.parse(responseText);
+
+            } catch (error) {
+                console.error('Error calling Google Script:', error);
+                updateStatus('error');
+                await showAlert(`Terjadi kesalahan skrip atau koneksi: ${error.message}`, true);
+                return { success: false, message: error.toString() };
+            }
+        }
+        
+        // syncData HANYA mengambil data stok kain
+        async function syncData(force = false) {
+            if (isSyncing && !force) return;
+            isSyncing = true;
+            updateStatus('syncing');
+
+            const result = await callGoogleScript('getLiveKain');
+            if (result.success) {
+                stokKainCache = (result.data && result.data.length > 0) ? result.data : [];
+                // --- SMART CACHE: SAVE STOK ---
+                try {
+                    localStorage.setItem(CACHE_KEY_STOK, JSON.stringify(stokKainCache));
+                } catch (e) {
+                    console.warn('Gagal menyimpan cache stok:', e);
+                }
+                // --- END SMART CACHE ---
+                filterKain();
+                updateStatus('connected');
+            } else {
+                updateStatus('error');
+            }
+            isSyncing = false;
+        }
+
+        // syncKainDatabase HANYA mengambil data database
+        async function syncKainDatabase(force = false) {
+            if (isDbSyncing && !force) return;
+            isDbSyncing = true;
+            
+            const result = await callGoogleScript('getKainDatabase');
+            if(result.success) {
+                databaseKainCache = result.data || [];
+                // --- SMART CACHE: SAVE DB ---
+                try {
+                    localStorage.setItem(CACHE_KEY_DB, JSON.stringify(databaseKainCache));
+                } catch (e) {
+                    console.warn('Gagal menyimpan cache database:', e);
+                }
+                // --- END SMART CACHE ---
+            }
+            isDbSyncing = false;
+        }
+
+        // Fungsi baru untuk mengambil SEMUA data, digunakan saat load awal & sync latar belakang
+        async function loadInitialData(isBackgroundSync = false) {
+            if (isSyncing && !isBackgroundSync) return; // Mencegah tumpang tindih
+            
+            isSyncing = true;
+            isDbSyncing = true; // Kunci keduanya
+            
+            if (!isBackgroundSync) {
+                updateStatus('syncing');
+            }
+            
+            const result = await callGoogleScript('getInitialData');
+            if(result.success && result.data) {
+                stokKainCache = result.data.liveKain || [];
+                databaseKainCache = result.data.databaseKain || [];
+                
+                // --- SMART CACHE: SAVE ALL ---
+                try {
+                    localStorage.setItem(CACHE_KEY_STOK, JSON.stringify(stokKainCache));
+                    localStorage.setItem(CACHE_KEY_DB, JSON.stringify(databaseKainCache));
+                } catch (e) {
+                    console.warn('Gagal menyimpan cache ke localStorage:', e);
+                }
+                // --- END SMART CACHE ---
+
+                renderDbModalContent();
+                filterKain();
+                updateStatus('connected');
+            } else {
+                updateStatus('error');
+                if (!isBackgroundSync) {
+                    showAlert('Gagal memuat data awal.', true);
+                }
+            }
+            
+            if (!isBackgroundSync) {
+                closeModal(initialLoadingOverlay);
+            }
+            isSyncing = false;
+            isDbSyncing = false;
+        }
+
+
+        async function refreshKainDatabase(forceSync = false) {
+             if (forceSync) {
+                await syncKainDatabase(true);
+             }
+             renderDbModalContent();
+        }
+
+        function renderDbModalContent() {
+            const query = viewDbModal.searchInput.value.toLowerCase().trim();
+
+            const filteredData = query ?
+                databaseKainCache.filter(item =>
+                    String(item.warnaKain || '').toLowerCase().includes(query) ||
+                    String(item.kode || '').toLowerCase().includes(query) ||
+                    String(item.suplier || '').toLowerCase().includes(query)
+                ) :
+                [...databaseKainCache];
+            
+            // Urutkan data berdasarkan nama warna kain (A-Z)
+            filteredData.sort((a, b) => (a.warnaKain || '').localeCompare(b.warnaKain || ''));
+
+            const totalPages = Math.ceil(filteredData.length / dbItemsPerPage) || 1;
+            dbCurrentPage = Math.max(1, Math.min(dbCurrentPage, totalPages));
+            
+            const start = (dbCurrentPage - 1) * dbItemsPerPage;
+            const end = start + dbItemsPerPage;
+            const pageItems = filteredData.slice(start, end);
+
+            viewDbModal.gridContainer.innerHTML = '';
+            if (pageItems.length === 0) {
+                viewDbModal.gridContainer.innerHTML = `<p class="col-span-full text-center text-gray-500 py-10">Data tidak ditemukan.</p>`;
+            } else {
+                pageItems.forEach(item => {
+                    const itemEl = document.createElement('div');
+                    itemEl.className = "bg-white p-3 rounded-lg border text-sm space-y-1 shadow-sm flex flex-col justify-between";
+                    itemEl.innerHTML = `
+                        <div>
+                            <p class="font-bold truncate" title="${item.warnaKain}">${item.warnaKain}</p>
+                            <p class="text-gray-600">Kode: ${item.kode}</p>
+                            <p class="text-gray-600">Supplier: ${item.suplier}</p>
+                        </div>
+                        <button class="text-xs text-indigo-600 hover:text-indigo-900 font-semibold self-start mt-2 edit-db-btn" 
+                            data-warna="${item.warnaKain}" 
+                            data-kode="${item.kode}" 
+                            data-suplier="${item.suplier}">
+                            Edit Data
+                        </button>`;
+                    viewDbModal.gridContainer.appendChild(itemEl);
+                });
+            }
+
+            viewDbModal.pagination.innerHTML = `
+                <button id="db-prev-btn" ${dbCurrentPage === 1 ? 'disabled' : ''} class="px-4 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition">Sebelumnya</button>
+                <span class="font-semibold text-gray-600">Halaman ${dbCurrentPage} dari ${totalPages}</span>
+                <button id="db-next-btn" ${dbCurrentPage === totalPages ? 'disabled' : ''} class="px-4 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition">Selanjutnya</button>
+            `;
+
+            document.querySelectorAll('#view-db-grid-container .edit-db-btn').forEach(btn => btn.addEventListener('click', openEditDbModal));
+            
+            const prevBtn = document.getElementById('db-prev-btn');
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                if (dbCurrentPage > 1) {
+                    dbCurrentPage--;
+                    renderDbModalContent();
+                }
+            });
+
+            const nextBtn = document.getElementById('db-next-btn');
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                if (dbCurrentPage < totalPages) {
+                    dbCurrentPage++;
+                    renderDbModalContent();
+                }
+            });
+        }
+
+
+        function displayKain(kainData) {
+            const tabelStok = document.getElementById('tabelStokKain');
+            const cardContainer = document.getElementById('stok-cards');
+            tabelStok.innerHTML = ''; 
+            cardContainer.innerHTML = '';
+
+            const emptyStateHTML = (query) => `
+                <div class="flex flex-col items-center justify-center h-full text-center p-12">
+                    <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <h3 class="mt-2 text-sm font-medium text-gray-900">${query ? 'Tidak Ditemukan' : 'Data Belum Tampil'}</h3>
+                    <p class="mt-1 text-sm text-gray-500">${query ? 'Tidak ada hasil ditemukan untuk pencarian Anda.' : 'Mulai dengan mengetik di kolom pencarian.'}</p>
+                </div>`;
+            
+            // Urutkan data stok kain berdasarkan barcode (A-Z)
+            kainData.sort((a, b) => (a.barcode || '').localeCompare(b.barcode || ''));
+
+            if (kainData && kainData.length > 0) {
+                kainData.forEach(item => {
+                    // Render Table Row for Desktop
+                    const row = tabelStok.insertRow();
+                    row.innerHTML = `<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${item.barcode}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${item.warnaKain}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${item.yard}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${item.letak}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-center">
+                            <button class="process-btn bg-indigo-100 text-indigo-700 hover:bg-indigo-200 text-xs font-bold px-4 py-2 rounded-full transition duration-200 inline-flex items-center gap-2" data-barcode="${item.barcode}">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586L8.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                                <span>Proses</span>
+                            </button>
+                        </td>`;
+                    
+                    // Render Card for Mobile
+                    const card = document.createElement('div');
+                    card.className = "bg-white p-4 rounded-lg shadow-sm border border-gray-200";
+                    card.innerHTML = `
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <p class="text-xs font-medium text-gray-500">Barcode</p>
+                                <p class="font-bold text-gray-900 break-all">${item.barcode}</p>
+                            </div>
+                            <button class="process-btn bg-indigo-100 text-indigo-700 hover:bg-indigo-200 text-xs font-bold px-3 py-2 rounded-full transition duration-200 inline-flex items-center gap-1 flex-shrink-0" data-barcode="${item.barcode}">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586L8.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                                <span>Proses</span>
+                            </button>
+                        </div>
+                        <div class="mt-3 pt-3 border-t grid grid-cols-3 gap-y-2 gap-x-4 text-xs">
+                            <div>
+                                <p class="text-gray-500">Warna</p>
+                                <p class="text-gray-800 font-semibold truncate">${item.warnaKain || '-'}</p>
+                            </div>
+                             <div>
+                                <p class="text-gray-500">Kode</p>
+                                <p class="text-gray-800 font-semibold">${item.kode || '-'}</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Yard</p>
+                                <p class="text-gray-800 font-semibold">${item.yard || '-'}</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Letak</p>
+                                <p class="text-gray-800 font-semibold">${item.letak || '-'}</p>
+                            </div>
+                             <div>
+                                <p class="text-gray-500">Supplier</p>
+                                <p class="text-gray-800 font-semibold">${item.suplier || '-'}</p>
+                            </div>
+                        </div>
+                    `;
+                    cardContainer.appendChild(card);
+                });
+                document.querySelectorAll('.process-btn').forEach(btn => btn.addEventListener('click', openProsesModal));
+            } else {
+                const query = searchInput.value.trim();
+                tabelStok.innerHTML = `<tr class="h-full"><td colspan="5">${emptyStateHTML(query)}</td></tr>`;
+                cardContainer.innerHTML = emptyStateHTML(query);
+            }
+        }
+
+        // --- SEARCH FUNCTIONS ---
+        function filterKain() {
+            const query = searchInput.value.toLowerCase().trim();
+            if (!query) {
+                displayKain([]);
+                return;
+            }
+            const queryParts = query.split(' ').filter(p => p.length > 0);
+            const filteredData = stokKainCache.filter(item => {
+                const itemText = [
+                    item.barcode,
+                    item.warnaKain,
+                    item.kode,
+                    item.letak,
+                    item.suplier
+                ].map(val => String(val || '').toLowerCase()).join(' ');
+                return queryParts.every(part => itemText.includes(part));
+            });
+            displayKain(filteredData);
+        }
+
+        // --- OTHER MODAL LOGIC ---
+        function openProsesModal(e) {
+            const barcodeToFind = e.currentTarget.dataset.barcode;
+            const itemData = stokKainCache.find(item => item.barcode === barcodeToFind);
+
+            if (!itemData) {
+                showAlert('Data untuk barcode ini tidak ditemukan. Coba segarkan halaman.', true);
+                return;
+            }
+            
+            document.getElementById('modal-barcode').textContent = itemData.barcode || '-';
+            document.getElementById('modal-warna').textContent = itemData.warnaKain || '-';
+            document.getElementById('modal-yard').textContent = itemData.yard || '-';
+            document.getElementById('modal-kode').textContent = itemData.kode || '-';
+            document.getElementById('modal-suplier').textContent = itemData.suplier || '-';
+            modal.hiddenBarcode.value = itemData.barcode;
+
+            modal.customerSelection.innerHTML = '';
+            PELANGGAN_LIST.forEach(name => {
+                const id = name.toLowerCase().replace(/\s/g, '-');
+                const div = document.createElement('div');
+                div.className = "flex items-center gap-4";
+                div.innerHTML = `
+                    <button type="button" class="choice-btn flex-1 text-left p-2 border-2 border-gray-300 rounded-md" data-target="${id}">${name}</button>
+                    <input type="number" id="${id}" name="${id}" min="1" placeholder="Jumlah" class="w-32 p-2 border border-gray-300 rounded-md hidden">
+                `;
+                modal.customerSelection.appendChild(div);
+            });
+            
+            modal.customerSelection.querySelectorAll('.choice-btn').forEach(btn => {
+                btn.addEventListener('click', (event) => {
+                    event.currentTarget.classList.toggle('selected');
+                    const targetInput = document.getElementById(event.currentTarget.dataset.target);
+                    targetInput.classList.toggle('hidden');
+                    if (!targetInput.classList.contains('hidden')) {
+                        targetInput.focus();
+                    } else {
+                        targetInput.value = '';
+                    }
+                });
+            });
+            
+            openModal(modal.element);
+        }
+        
+        modal.closeBtn.addEventListener('click', () => closeModal(modal.element));
+
+        function openEditDbModal(e) {
+            const { warna, kode, suplier } = e.target.dataset;
+            editDbModal.originalWarna.value = warna;
+            editDbModal.warna.value = warna;
+            editDbModal.kode.value = kode;
+            editDbModal.suplier.value = suplier;
+            openModal(editDbModal.element);
+        }
+        
+        editDbModal.closeBtn.addEventListener('click', () => closeModal(editDbModal.element));
+
+        // --- FORM SUBMISSIONS & INPUT HANDLING (REVISED) ---
+        function setupButtonGroup(containerId) {
+            const container = document.getElementById(containerId);
+            const buttons = container.querySelectorAll('button');
+            const hiddenInputId = containerId.replace('-btns', '');
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    buttons.forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    if(hiddenInput) {
+                        hiddenInput.value = button.dataset.value;
+                    } else {
+                        console.error(`Hidden input with ID '${hiddenInputId}' not found.`);
+                    }
+                });
+            });
+        }
+
+        function handleKodeInput(event) {
+            // Memastikan input hanya angka
+            let value = event.target.value.replace(/[^0-9]/g, '');
+            event.target.value = value;
+            
+            const kodeValue = value.trim();
+            const warnaKainInput = document.getElementById('warnaKain');
+            const supplierHiddenInput = document.getElementById('supplier');
+            const supplierButtons = document.querySelectorAll('#supplier-btns button');
+
+            // Cari kecocokan di cache database
+            // .find() akan mengambil data pertama yang cocok, sesuai permintaan
+            const match = databaseKainCache.find(item => String(item.kode) === kodeValue);
+
+            if (match) {
+                // Jika cocok, isi otomatis kolom Warna Kain dan Supplier
+                warnaKainInput.value = match.warnaKain;
+                supplierHiddenInput.value = match.suplier;
+                
+                // Update tampilan tombol supplier
+                supplierButtons.forEach(btn => {
+                    if (btn.dataset.value === match.suplier) {
+                        btn.classList.add('selected');
+                    } else {
+                        btn.classList.remove('selected');
+                    }
+                });
+            } else {
+                // Jika tidak cocok, kosongkan kolom terkait
+                warnaKainInput.value = '';
+                supplierHiddenInput.value = '';
+                supplierButtons.forEach(btn => btn.classList.remove('selected'));
+            }
+        }
+
+        function handleNumericInput(event) {
+            let value = event.target.value.replace(/[^0-9]/g, '');
+            if (value) {
+                value = parseInt(value, 10);
+            }
+            event.target.value = value || '';
+        }
+
+        function smartResetForm() {
+            document.getElementById('barcode').value = '';
+            document.getElementById('warnaKain').value = '';
+            document.getElementById('kode').value = '';
+            document.getElementById('barcode').focus();
+        }
+        
+        forms.tambahDatabase.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                warnaKain: document.getElementById('dbWarnaKain').value,
+                kode: document.getElementById('dbKode').value,
+                suplier: document.getElementById('db-supplier').value,
+            };
+
+            if (!data.suplier) {
+                showAlert('Supplier wajib dipilih.', true);
+                return;
+            }
+
+            const confirmed = await showConfirmation('Konfirmasi Tambah Database', `Tambahkan <strong>${data.warnaKain}</strong> ke database?`);
+            if(!confirmed) return;
+            
+            openModal(processingLoadingModal.element);
+            updateStatus('syncing');
+            const result = await callGoogleScript('addKainToDatabase', data);
+            closeModal(processingLoadingModal.element);
+
+            if (result.success) {
+                forms.tambahDatabase.reset();
+                 document.querySelectorAll('#db-supplier-btns button').forEach(btn => btn.classList.remove('selected'));
+                
+                // --- SMART SYNC (INSTANT UI) START ---
+                databaseKainCache.push(data); // 'data' adalah objek yang baru saja kita kirim
+                renderDbModalContent(); // Render ulang grid modal
+                try { // Update cache
+                    localStorage.setItem(CACHE_KEY_DB, JSON.stringify(databaseKainCache));
+                } catch (e) {}
+                // --- SMART SYNC END ---
+
+                await showAlert('Data berhasil ditambahkan!');
+                
+                // Panggil sinkronisasi DB penuh di latar belakang
+                refreshKainDatabase(true);
+            } else {
+                showAlert('Error: ' + result.message, true);
+                updateStatus('error');
+            }
+        });
+
+        editDbModal.form.addEventListener('submit', async(e) => {
+            e.preventDefault();
+            const data = {
+                originalWarnaKain: editDbModal.originalWarna.value,
+                newWarnaKain: editDbModal.warna.value,
+                newKode: editDbModal.kode.value,
+                newSuplier: editDbModal.suplier.value,
+            };
+
+            const confirmed = await showConfirmation('Konfirmasi Perubahan', `Simpan perubahan untuk <strong>${data.originalWarnaKain}</strong>?`);
+            if(!confirmed) return;
+
+            openModal(processingLoadingModal.element);
+            updateStatus('syncing');
+            const result = await callGoogleScript('updateKainDatabase', data);
+
+            if(result.success) {
+                closeModal(editDbModal.element);
+
+                // --- SMART SYNC (INSTANT UI) START ---
+                const itemIndex = databaseKainCache.findIndex(item => item.warnaKain === data.originalWarnaKain);
+                if (itemIndex > -1) {
+                    databaseKainCache[itemIndex].warnaKain = data.newWarnaKain;
+                    databaseKainCache[itemIndex].kode = data.newKode;
+                    databaseKainCache[itemIndex].suplier = data.newSuplier;
+                }
+                renderDbModalContent(); // Render ulang grid modal
+                try { // Update cache
+                    localStorage.setItem(CACHE_KEY_DB, JSON.stringify(databaseKainCache));
+                } catch (e) {}
+                // --- SMART SYNC END ---
+                
+                closeModal(processingLoadingModal.element);
+                await showAlert('Data berhasil diperbarui!');
+
+                // Panggil sinkronisasi DB penuh di latar belakang
+                await refreshKainDatabase(true);
+            } else {
+                closeModal(processingLoadingModal.element);
+                showAlert('Error: ' + result.message, true);
+                updateStatus('error');
+            }
+        });
+
+
+        forms.tambahStok.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                barcode: document.getElementById('barcode').value,
+                warnaKain: document.getElementById('warnaKain').value,
+                kode: document.getElementById('kode').value,
+                suplier: document.getElementById('supplier').value,
+                yard: document.getElementById('yard').value,
+                letak: document.getElementById('letak').value,
+            };
+
+            if (!data.suplier || !data.letak) {
+                showAlert('Supplier dan Letak wajib dipilih.', true);
+                return;
+            }
+
+            const confirmationMessage = `
+                <div class="grid grid-cols-2 gap-x-4 text-left">
+                    <strong class="text-gray-500">Barcode:</strong> <span>${data.barcode}</span>
+                    <strong class="text-gray-500">Warna:</strong> <span>${data.warnaKain}</span>
+                    <strong class="text-gray-500">Kode:</strong> <span>${data.kode}</span>
+                    <strong class="text-gray-500">Yard:</strong> <span>${data.yard}</span>
+                    <strong class="text-gray-500">Supplier:</strong> <span>${data.suplier}</span>
+                    <strong class="text-gray-500">Letak:</strong> <span>${data.letak}</span>
+                </div>
+            `;
+
+            const confirmed = await showConfirmation('Konfirmasi Data Stok Baru', confirmationMessage);
+
+            if (!confirmed) return;
+
+            openModal(processingLoadingModal.element);
+            updateStatus('syncing');
+            const result = await callGoogleScript('addKainToLive', data);
+            closeModal(processingLoadingModal.element);
+
+            if (result.success) {
+                // --- SMART SYNC (INSTANT UI) START ---
+                stokKainCache.push(data); // 'data' adalah objek yang baru saja kita kirim
+                filterKain(); // Render ulang tabel/kartu
+                try { // Update cache
+                    localStorage.setItem(CACHE_KEY_STOK, JSON.stringify(stokKainCache));
+                } catch (e) {}
+                // --- SMART SYNC END ---
+
+                await showAlert('Data Berhasil Disimpan!');
+                openModal(inputAgainModal.element);
+
+                // Panggil sinkronisasi penuh di latar belakang
+                syncData(true); 
+            } else {
+                showAlert('Error: ' + result.message, true);
+                updateStatus('error'); // Revert status on error
+            }
+        });
+
+        forms.prosesKain.addEventListener('submit', async (e) => {
+             e.preventDefault();
+            const data = { barcode: modal.hiddenBarcode.value };
+            let totalPotongan = 0;
+            let summaryHtml = '';
+
+            PELANGGAN_LIST.forEach(name => {
+                const id = name.toLowerCase().replace(/\s/g, '-');
+                const input = document.getElementById(id);
+                const value = parseInt(input.value, 10);
+                const key = id.replace(/-/g, '');
+                data[key] = (input && !input.classList.contains('hidden') && value > 0) ? value : '';
+                if(data[key]) {
+                    totalPotongan += value;
+                    summaryHtml += `<strong>${name}:</strong> ${value} potong<br>`;
+                }
+            });
+
+            if (totalPotongan === 0) {
+                showAlert("Pilih minimal satu pelanggan dan isi jumlahnya.", true);
+                return;
+            }
+
+            const confirmed = await showConfirmation('Konfirmasi Proses Kain', `Anda akan memproses kain <strong>${data.barcode}</strong> dengan detail:<br><br>${summaryHtml}<br>Data di Sheet1 akan dihapus. Lanjutkan?`);
+
+            if (confirmed) {
+                openModal(processingLoadingModal.element);
+                updateStatus('syncing');
+                const result = await callGoogleScript('processAndMoveKain', data);
+                
+                if (result.success) {
+                    closeModal(modal.element);
+                    closeModal(processingLoadingModal.element);
+                    await showAlert('Kain Berhasil Diproses!');
+                    
+                    // --- SMART SYNC (INSTANT UI) START ---
+                    const processedBarcode = data.barcode;
+                    const itemIndex = stokKainCache.findIndex(item => item.barcode === processedBarcode);
+                    
+                    if (itemIndex > -1) {
+                        stokKainCache.splice(itemIndex, 1);
+                    }
+                    
+                    filterKain(); 
+                    try { // Update cache
+                        localStorage.setItem(CACHE_KEY_STOK, JSON.stringify(stokKainCache));
+                    } catch (e) {}
+                    // --- SMART SYNC END ---
+
+                    // Panggil sinkronisasi penuh di latar belakang
+                    syncData(true);
+                } else {
+                    closeModal(processingLoadingModal.element);
+                    showAlert('Error: ' + result.message, true);
+                    updateStatus('error');
+                }
+            }
+        });
+
+        // --- APP INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // PWA Service Worker Registration
+            if ('serviceWorker' in navigator) {
+                const swCode = `
+                    const CACHE_NAME = 'stok-voal-cache-v1';
+                    const urlsToCache = [
+                        './',
+                        'https://cdn.tailwindcss.com',
+                        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+                        'https://kaspin.sgp1.digitaloceanspaces.com/gambarToko/B43kpM1hZFqld82u1iNG.png'
+                    ];
+                    self.addEventListener('install', event => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then(cache => {
+                                    console.log('Opened cache');
+                                    return cache.addAll(urlsToCache);
+                                })
+                        );
+                    });
+                    self.addEventListener('fetch', event => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then(response => {
+                                    if (response) {
+                                        return response; // Serve from cache
+                                    }
+                                    return fetch(event.request); // Fetch from network
+                                })
+                        );
+                    });
+                `;
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                navigator.serviceWorker.register(swUrl)
+                    .then(registration => console.log('ServiceWorker registration successful.'))
+                    .catch(err => console.log('ServiceWorker registration failed: ', err));
+            }
+
+            // --- SMART CACHE: LOAD ---
+            let loadedFromCache = false;
+            try {
+                const cachedStok = localStorage.getItem(CACHE_KEY_STOK);
+                const cachedDb = localStorage.getItem(CACHE_KEY_DB);
+
+                if (cachedStok && cachedDb) {
+                    stokKainCache = JSON.parse(cachedStok);
+                    databaseKainCache = JSON.parse(cachedDb);
+                    
+                    renderDbModalContent();
+                    filterKain();
+                    updateStatus('connected'); // Asumsikan terhubung, akan diverifikasi
+                    closeModal(initialLoadingOverlay); // <<< TUTUP OVERLAY INSTAN
+                    loadedFromCache = true;
+                    
+                    // Ambil data baru di latar belakang
+                    loadInitialData(true); // true = background sync
+                }
+            } catch (e) {
+                console.warn('Gagal memuat cache dari localStorage:', e);
+                // Biarkan lanjut ke load normal jika cache gagal
+            }
+
+            if (!loadedFromCache) {
+                loadInitialData(false); // Load awal normal (menampilkan overlay)
+            }
+            // --- END SMART CACHE ---
+            
+            showTab('stok');
+            buttons.stok.addEventListener('click', () => showTab('stok'));
+            buttons.tambah.addEventListener('click', () => showTab('tambah'));
+            buttons.database.addEventListener('click', () => showTab('database'));
+            
+            searchInput.addEventListener('keyup', filterKain);
+            
+            document.getElementById('view-db-btn').addEventListener('click', () => {
+                openModal(viewDbModal.element);
+            });
+            viewDbModal.closeBtn.addEventListener('click', () => closeModal(viewDbModal.element));
+            viewDbModal.searchInput.addEventListener('keyup', () => {
+                dbCurrentPage = 1; // Reset to first page on new search
+                renderDbModalContent();
+            });
+            
+            document.getElementById('barcode').addEventListener('input', (e) => {
+                const barcodeValue = e.target.value.trim();
+                barcodeDuplicateWarning.innerHTML = ''; // Clear previous warning
+                if (barcodeValue) {
+                    const match = stokKainCache.find(item => String(item.barcode) === barcodeValue);
+                    if (match) {
+                        barcodeDuplicateWarning.innerHTML = `
+                            <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-md mt-2" role="alert">
+                                <p class="font-bold">Perhatian: Barcode (${barcodeValue}) Sudah Terdaftar</p>
+                                <div class="text-sm mt-2 grid grid-cols-2 gap-x-4">
+                                    <p><strong>Warna Kain:</strong> ${match.warnaKain}</p>
+                                    <p><strong>Letak:</strong> ${match.letak}</p>
+                                    <p><strong>Kode:</strong> ${match.kode}</p>
+                                    <p><strong>Yard:</strong> ${match.yard}</p>
+                                    <p><strong>Supplier:</strong> ${match.suplier}</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+            });
+
+            document.getElementById('dbKode').addEventListener('input', (e) => {
+                const kodeValue = e.target.value.trim();
+                dbDuplicateWarning.innerHTML = ''; // Clear previous warning
+                if (kodeValue) {
+                    const match = databaseKainCache.find(item => String(item.kode) === kodeValue);
+                    if (match) {
+                        dbDuplicateWarning.innerHTML = `
+                            <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-md" role="alert">
+                                <p class="font-bold">Perhatian: Kode Kain (${kodeValue}) Sudah Tersedia</p>
+                                <div class="text-sm mt-2">
+                                    <p><strong>Warna Kain:</strong> ${match.warnaKain}</p>
+                                    <p><strong>Kode:</strong> ${match.kode}</p>
+                                    <p><strong>Supplier:</strong> ${match.suplier}</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+            });
+
+            setupButtonGroup('supplier-btns');
+            setupButtonGroup('letak-btns');
+            setupButtonGroup('db-supplier-btns');
+            document.getElementById('kode').addEventListener('input', handleKodeInput);
+            document.getElementById('yard').addEventListener('input', handleNumericInput);
+
+            inputAgainModal.yesBtn.addEventListener('click', () => {
+                smartResetForm();
+                closeModal(inputAgainModal.element);
+            });
+            inputAgainModal.noBtn.addEventListener('click', () => {
+                forms.tambahStok.reset();
+                document.querySelectorAll('#supplier-btns button, #letak-btns button').forEach(btn => btn.classList.remove('selected'));
+                closeModal(inputAgainModal.element);
+            });
+            
+            // --- SMART SYNC (QUOTA SAVER) ---
+            // 1. Hapus interval lama yang agresif
+            // setInterval(() => syncData(), 15000); // HAPUS
+            // setInterval(() => syncKainDatabase(), 20000); // HAPUS
+
+            // 2. Tambahkan interval yang jauh lebih hemat (3 menit)
+            setInterval(() => {
+                if (!isSyncing && !isDbSyncing) { // Hanya jalankan jika tidak ada sync lain
+                    loadInitialData(true); // true = background sync
+                }
+            }, 180000); // 180,000 ms = 3 menit
+
+            // 3. Tambahkan sync saat pengguna kembali ke tab
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible') {
+                    if (!isSyncing && !isDbSyncing) {
+                        loadInitialData(true); // true = background sync
+                    }
+                }
+            });
+            // --- END SMART SYNC ---
+        });
+    </script>
+
+  <!-- Scanner integration -->
+  <script src="scan.js" type="module"></script>
+</body>
+</html>
+
+
